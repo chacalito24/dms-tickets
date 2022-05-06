@@ -1,52 +1,53 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 using Pedidos.Infraestructure.EF.ReadModel;
+using Reservas.Infraestructure.EF.ReadModel;
 
-namespace Pedidos.Infraestructure.EF.Config.ReadConfig
+namespace Reservas.Infraestructure.EF.Config.ReadConfig
 {
-    public class VueloReadConfig : IEntityTypeConfiguration<VueloReadModel>,
-        IEntityTypeConfiguration<DetallePedidoReadModel>
+    public class VueloReadConfig : IEntityTypeConfiguration<VueloReadModel> 
+        
     {
         public void Configure(EntityTypeBuilder<VueloReadModel> builder)
         {
-            builder.ToTable("Pedido");
-            builder.HasKey(x => x.Id);
+            builder.ToTable("Vuelo");
+            builder.HasKey(x => x.NroVuelo);
 
-            builder.Property(x => x.NroPedido)
-                .HasColumnName("nroPedido")
+            builder.Property(x => x.NroVuelo)
+                .HasColumnName("NroVuelo")
                 .HasMaxLength(6);
 
-            builder.Property(x => x.Total)
-                .HasColumnName("total")
-                .HasColumnType("decimal")
-                .HasPrecision(12, 2);
-
-            builder.HasMany(x => x.Detalle)
-                .WithOne(x => x.Pedido);
-
-        }
-
-        public void Configure(EntityTypeBuilder<DetallePedidoReadModel> builder)
-        {
-            builder.ToTable("DetallePedido");
-            builder.HasKey(x => x.Id);
-
-            builder.Property(x => x.Instrucciones)
-                .HasColumnName("instrucciones")
-                .HasMaxLength(500);
-
-            builder.Property(x => x.Precio)
-                .HasColumnName("precio")
-                .HasColumnType("decimal")
-                .HasPrecision(12, 2);
-
-            builder.Property(x => x.SubTotal)
-                .HasColumnName("subTotal")
-                .HasColumnType("decimal")
-                .HasPrecision(12, 2);
-
             builder.Property(x => x.Cantidad)
-                .HasColumnName("cantidad");
+                .HasColumnName("Cantidad")
+                .HasColumnType("decimal")
+                .HasPrecision(12, 2);
+
+            builder.HasMany(x => x._Pasaje)
+                .WithOne(x => x.vuelo);
+
         }
-    }
+
+    //    public void Configure(EntityTypeBuilder<DetallePedidoReadModel> builder)
+    //    {
+    //        builder.ToTable("DetallePedido");
+    //        builder.HasKey(x => x.Id);
+
+    //        builder.Property(x => x.Instrucciones)
+    //            .HasColumnName("instrucciones")
+    //            .HasMaxLength(500);
+
+    //        builder.Property(x => x.Precio)
+    //            .HasColumnName("precio")
+    //            .HasColumnType("decimal")
+    //            .HasPrecision(12, 2);
+
+    //        builder.Property(x => x.SubTotal)
+    //            .HasColumnName("subTotal")
+    //            .HasColumnType("decimal")
+    //            .HasPrecision(12, 2);
+
+    //        builder.Property(x => x.Cantidad)
+    //            .HasColumnName("cantidad");
+    //    }
+    //}
 }

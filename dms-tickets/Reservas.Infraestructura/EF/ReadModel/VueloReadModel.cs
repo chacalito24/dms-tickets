@@ -7,11 +7,11 @@ namespace Reservas.Infraestructure.EF.ReadModel
 {
     public class VueloReadModel
     {
-        public Nro_Vuelo NroVuelo { get; private set; }
-        public string Tipo_Asiento { get; private set; }
-        public PrecioValue Cantidad { get; private set; }
-        public PrecioValue Precio { get; private set; }
-        public Pasaje _Pasaje { get; private set; }
+        public Nro_Vuelo NroVuelo { get;   set; }
+        public string Tipo_Asiento { get;   set; }
+        public decimal Cantidad { get;   set; }
+        public decimal Precio { get;   set; }
+        public decimal _Pasaje { get;   set; }
 
         ///   public ICollection<DetallePedidoReadModel> Detalle { get; set; }
 

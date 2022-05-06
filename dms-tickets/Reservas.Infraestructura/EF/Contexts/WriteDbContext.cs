@@ -7,11 +7,11 @@ using Reservas.Domain.Model.Reservas;
 using ShareKernel.Core;
 using System.Data.Entity;
 
-namespace Pedidos.Infraestructure.EF.Contexts
+namespace Reservas.Infraestructure.EF.Contexts
 {
-    public class WriteDbContext : DbContext
+    public class WriteDbContext : System.Data.Entity.DbContext
     {
-        public virtual DbSet<Vuelos> Vuelos { get; set; }
+        public virtual System.Data.Entity.DbSet<Vuelos> Vuelos { get; set; }
        // public virtual DbSet<Producto> Producto { get; set; }
 
         public WriteDbContext(DbContextOptions<WriteDbContext> options) : base(options)
@@ -22,8 +22,8 @@ namespace Pedidos.Infraestructure.EF.Contexts
         {
             base.OnModelCreating(modelBuilder);
 
-            var pedidoConfig = new VueloWriteConfig();
-            modelBuilder.ApplyConfiguration<Vuelos>(pedidoConfig);
+            var VueloConfig = new VueloWriteConfig();
+            modelBuilder.ApplyConfiguration<Vuelos>(VueloConfig);
            // modelBuilder.ApplyConfiguration<DetallePedido>(pedidoConfig);
 
             //var productoConfig = new ProductoWriteConfig();

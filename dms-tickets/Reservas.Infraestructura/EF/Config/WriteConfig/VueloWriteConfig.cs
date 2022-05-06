@@ -5,18 +5,20 @@ using Pedidos.Domain.Model.Pedidos;
 using Pedidos.Domain.Model.Pedidos.ValueObjects;
 using Pedidos.Domain.Model.ValueObjects;
 using Pedidos.Domain.ValueObjects;
+using Reservas.Domain.Model.Reservas;
+using Reservas.Domain.ValueObjects;
 
 namespace Pedidos.Infraestructure.EF.Config.WriteConfig
 {
     public class VueloWriteConfig : IEntityTypeConfiguration<Pedido>,
         IEntityTypeConfiguration<DetallePedido>
     {
-        public void Configure(EntityTypeBuilder<Pedido> builder)
+        public void Configure(EntityTypeBuilder<Vuelos> builder)
         {
-            builder.ToTable("Pedido");
+            builder.ToTable("Vuelo");
             builder.HasKey(x => x.Id);
 
-            var nroPedidoConverter = new ValueConverter<NumeroPedido, string>(
+            var nroPedidoConverter = new ValueConverter<Nro_Vuelo, string>(
                 nroPedidoValue => nroPedidoValue.Value, 
                 nroPedido => new NumeroPedido(nroPedido)
             );
