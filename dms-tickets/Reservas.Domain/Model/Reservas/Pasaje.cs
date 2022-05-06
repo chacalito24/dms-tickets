@@ -27,7 +27,10 @@ namespace Reservas.Domain.Model.Reservas
             Nombre = _Nombre_;
             Horario = _Horario_;
         }
- 
 
+        public static implicit operator Pasaje(int v)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

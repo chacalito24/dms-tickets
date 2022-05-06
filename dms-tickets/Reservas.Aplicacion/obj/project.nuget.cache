@@ -1,8 +1,13 @@
 {
   "version": 2,
-  "dgSpecHash": "D/OywAEKOMDc9y2nxnBK58iv+o8kjQuD8PBV53h4mFvurRJeS4pwxj/l2cCvIE1YmAB3cNcWyiPsuTd5EiHczQ==",
+  "dgSpecHash": "WatLPIIPdvu+uVe31sjWfh2n9J8ctVY6QG47RKqecf/pVH7txjMn355285zpEI7bOCViiaINvoVca/FM9ANkgw==",
   "success": true,
   "projectFilePath": "C:\\Jonathan\\dms-tickets\\dms-tickets\\Reservas.Aplicacion\\Reservas.Aplicacion.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "C:\\Users\\MARTIN\\.nuget\\packages\\mediatr\\10.0.1\\mediatr.10.0.1.nupkg.sha512",
+    "C:\\Users\\MARTIN\\.nuget\\packages\\mediatr.contracts\\1.0.1\\mediatr.contracts.1.0.1.nupkg.sha512",
+    "C:\\Users\\MARTIN\\.nuget\\packages\\mediatr.extensions.microsoft.dependencyinjection\\10.0.1\\mediatr.extensions.microsoft.dependencyinjection.10.0.1.nupkg.sha512",
+    "C:\\Users\\MARTIN\\.nuget\\packages\\microsoft.extensions.dependencyinjection.abstractions\\6.0.0\\microsoft.extensions.dependencyinjection.abstractions.6.0.0.nupkg.sha512"
+  ],
   "logs": []
 }

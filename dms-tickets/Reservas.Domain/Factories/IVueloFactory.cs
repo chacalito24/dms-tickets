@@ -2,7 +2,7 @@
 using Reservas.Domain.Model.Reservas;
 using Reservas.Domain.ValueObjects;
 
-namespace Pedidos.Domain.Factories
+namespace Reservas.Domain.Factories
 {
     public interface IVueloFactory
     {
